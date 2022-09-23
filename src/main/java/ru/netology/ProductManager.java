@@ -12,6 +12,10 @@ public class ProductManager {
         repository.add(product);
     }
 
+    public Product[] getProduct() {
+        Product[] all = repository.getProducts();
+        return all;
+    }
 
     public Product[] searchBy(String text) {
         Product[] result = new Product[0];

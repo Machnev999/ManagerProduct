@@ -1,6 +1,8 @@
 package ru.netology;
 
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
@@ -18,7 +20,7 @@ public class ManagerTest {
 
 
 
-
+@BeforeEach
     @Test
     public void setUp() {
         manager.add(item1);
@@ -32,42 +34,8 @@ public class ManagerTest {
 
 
     @Test
-    public void shouldSearchByNameAndMadeBy() {
-        Product[] actual = manager.searchBy("Телефон 1");
-        Product[] expected = {item3};
-
-        assertArrayEquals(actual,expected);
-
-    }
-
-
-
-    @Test
-    public void shouldSearchByNameBook() {
-        Product[] actual = manager.searchBy("Книга 2");
-        Product[] expected = {item2};
-        assertArrayEquals(actual, expected);
-
-    }
-
-    @Test
-    public void shouldSearchByNameSmartphone() {
-        Product[] actual = manager.searchBy("Телефон 3");
-        Product[] expected = {item5};
-       assertArrayEquals(actual,expected);
-    }
-
-    @Test
-    public void shouldSearchByAuthor() {
-        Product[] actual = manager.searchBy("Автор");
-        Product[] expected = {item1, item2};
-        assertArrayEquals(actual, expected);
-    }
-
-    @Test
-    public void shouldSearchByPart() {
-        Product[] actual = manager.searchBy("и");
-        Product[] expected = {item1, item2, item3};
-        assertArrayEquals(actual,expected);
-    }
-}
+    public void shouldShowAllProduct(){
+        Product[] expected = {item1,item2,item3,item4,item5};
+        Product[] actual = manager.getProduct();
+        Assertions.assertArrayEquals(expected, actual);
+    }}
