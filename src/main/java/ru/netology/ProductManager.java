@@ -19,7 +19,6 @@ public class ProductManager {
 
     public Product[] searchBy(String text) {
         Product[] result = new Product[0];
-
         for (Product product : repository.findAll()) {
             if (matches(product, text)) {
                 Product[] tmp = new Product[result.length + 1];
@@ -27,6 +26,7 @@ public class ProductManager {
                     tmp[i] = result[i];
                 }
                 tmp[tmp.length - 1] = product;
+                result = tmp;
             }
         }
 
@@ -36,7 +36,10 @@ public class ProductManager {
 
     // метод определения соответствия товара product запросу search
     public boolean matches(Product product, String search) {
-        return product.getName().contains(search);
-
+        if (product.getName().contains(search)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

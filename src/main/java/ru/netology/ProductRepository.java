@@ -10,12 +10,9 @@ public class ProductRepository {
     }
 
 
-
-
     public Product[] getItems() {
         return products;
     }
-
 
 
     // добавляем товар
@@ -30,13 +27,12 @@ public class ProductRepository {
     }
 
 
-
     //показываем весь товар
     public Product[] findAll() {
         return products;
     }
 
-    //удвление по id
+    //удаление по id
     public Product[] removeById(int id) {
         int length = products.length - 1;
         Product[] tmp = new Product[length];

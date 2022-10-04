@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
 
 public class ManagerTest {
 
@@ -18,9 +18,7 @@ public class ManagerTest {
     Smartphone item5 = new Smartphone(5, "Телефон 3", 30_000, "Марка 3");
 
 
-
-
-@BeforeEach
+    @BeforeEach
     @Test
     public void setUp() {
         manager.add(item1);
@@ -31,11 +29,19 @@ public class ManagerTest {
     }
 
 
-
-
     @Test
-    public void shouldShowAllProduct(){
-        Product[] expected = {item1,item2,item3,item4,item5};
+    public void shouldShowAllProduct() {
+        Product[] expected = {item1, item2, item3, item4, item5};
         Product[] actual = manager.getProduct();
         Assertions.assertArrayEquals(expected, actual);
-    }}
+    }
+
+    @Test
+    public void shouldShowOneProduct() {
+
+        Product[]expected = manager.searchBy("Книга 1");
+        Product[] actual = {item1};
+
+        Assertions.assertArrayEquals(expected,actual);
+    }
+}
