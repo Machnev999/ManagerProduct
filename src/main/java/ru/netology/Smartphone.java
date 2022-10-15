@@ -1,7 +1,7 @@
 package ru.netology;
 
 public class Smartphone extends Product {
-    private String name;
+    // private String name;
     private String fabric;
 
     public Smartphone(int id, String name, int price, String fabric) {

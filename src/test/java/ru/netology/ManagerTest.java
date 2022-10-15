@@ -39,8 +39,8 @@ public class ManagerTest {
     @Test
     public void shouldShowOneProduct() {
 
-        Product[]expected = manager.searchBy("Книга 1");
-        Product[] actual = {item1};
+        Product[]expected = {item1};
+        Product[] actual = manager.searchBy("Книга 1");
 
         Assertions.assertArrayEquals(expected,actual);
     }
