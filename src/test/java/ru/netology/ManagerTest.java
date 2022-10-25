@@ -44,4 +44,14 @@ public class ManagerTest {
 
         Assertions.assertArrayEquals(expected,actual);
     }
+
+    @Test
+    public void dontShoudedNoOneProduct (){
+
+        Product[]expected =  {};
+        Product[]actual = manager.searchBy("Книиига");
+
+        Assertions.assertArrayEquals(expected,actual);
+
+    }
 }
