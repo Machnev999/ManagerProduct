@@ -1,4 +1,7 @@
-package ru.netology;
+//1.разработать базовый класс содержащий id,name,price
+//2.сделать его родителем
+//3.геттеры и сеторы
+package ru.netology.domain;
 
 public class Product {
 

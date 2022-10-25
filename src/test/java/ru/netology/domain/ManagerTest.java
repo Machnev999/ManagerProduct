@@ -1,10 +1,11 @@
-package ru.netology;
+//1.
 
+package ru.netology.domain;
 
+import ru.netology.repository.ProductRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 
 
 public class ManagerTest {
@@ -19,6 +20,8 @@ public class ManagerTest {
 
 
     @BeforeEach
+    // создает настройки добавленного товара, чтобы не пришлось постоянно прописывать эти значения
+    //выполняется постоянно перед выполнением каждого теста
     @Test
     public void setUp() {
         manager.add(item1);
@@ -39,19 +42,19 @@ public class ManagerTest {
     @Test
     public void shouldShowOneProduct() {
 
-        Product[]expected = {item1};
+        Product[] expected = {item1};
         Product[] actual = manager.searchBy("Книга 1");
 
-        Assertions.assertArrayEquals(expected,actual);
+        Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void dontShoudedNoOneProduct (){
+    public void shouldNoOneProduct() {
 
-        Product[]expected =  {};
-        Product[]actual = manager.searchBy("Книиига");
+        Product[] expected = {};
+        Product[] actual = manager.searchBy("Книиига");
 
-        Assertions.assertArrayEquals(expected,actual);
+        Assertions.assertArrayEquals(expected, actual);
 
     }
 }

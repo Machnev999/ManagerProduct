@@ -1,4 +1,12 @@
-package ru.netology;
+//1.создать репозиторий с полем массива товаров Product []
+//2.возможность сохранять Product ы
+//3.показывать Product ы
+//4.удалять товар по id
+//5. добавить геттер для items
+
+package ru.netology.repository;
+
+import ru.netology.domain.Product;
 
 
 public class ProductRepository {
@@ -10,12 +18,12 @@ public class ProductRepository {
     }
 
 
-    public Product[] getItems() {
+   public Product[] getItems() {
         return products;
     }
 
 
-    // добавляем товар
+    // сохраняем товар
     public void add(Product product) {
         Product[] tmp = new Product[products.length + 1];// создадим новую линию массива
         // перебираем и фиксируем в новый массив тмп

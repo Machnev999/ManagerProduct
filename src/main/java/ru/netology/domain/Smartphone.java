@@ -1,7 +1,10 @@
-package ru.netology;
+//1.унаследовать поля у родителя.
+//2.вынести общие поля и добавить произоводителя
+//3.геттеры и сеторы
+package ru.netology.domain;
 
 public class Smartphone extends Product {
-    // private String name;
+
     private String fabric;
 
     public Smartphone(int id, String name, int price, String fabric) {
